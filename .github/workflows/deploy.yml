@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   deploy:
@@ -21,4 +20,4 @@ jobs:
           script: |
             cd /var/www/html/www.thebubble.org.uk/wp-content/themes/thebubble
             git config --global --add safe.directory /var/www/html/www.thebubble.org.uk/wp-content/themes/thebubble
-            git pull origin main || git pull origin master
+            git pull origin main
