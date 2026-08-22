@@ -1,0 +1,1860 @@
+/*
+Theme Name: TheBubble
+Theme URI: http://oscarryley.com/
+Author: Oscar Ryley
+Author URI: http://oscarryley.com/
+Text Domain: thebubble
+Description: A new theme for The Bubble magazine.
+Version: 0.1 alpha
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* SECTION I: THEME GLOBAL STYLES, CLASSES, AND PRE-REQUISITES. */
+/* I.a. Container styles and proportions. */
+html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+    padding: 0;
+	margin: 0;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+	font-size: 14px;
+	color: #333;
+}
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #fff;
+}
+
+.clearer {
+	clear: both;
+}
+
+/* I.a.i. Global column area proportions. */
+.content {
+	max-width: 100%;
+}
+
+.left {
+	width: 61%;
+	float: left;
+	margin-top: 20px;
+	min-width: 400px;
+}
+
+.right {
+	width: 29%;
+	min-width: 180px;
+	float: right;
+	font-size: 85%;
+	margin-top: 20px;
+}
+
+#archive-left {
+	width: 67%;
+}
+
+/* I.b. Global element styles. */
+p {
+	line-height: 1.65em;
+	margin: 0 0 1em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 1em 0;
+	font-weight: normal;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+/* I.c. Clearfix class for floats. */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* I.d. Global menu standards and general styles. */
+.site-nav {
+	position: relative;
+}
+
+.site-nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-nav ul:before, .site-nav ul:after { content: ""; display: table; }
+.site-nav ul:after { clear: both; }
+.site-nav ul { *zoom: 1; }
+
+.site-nav ul li {
+	list-style: none;
+	float: left;
+}
+
+.site-nav ul li a:link,
+.site-nav ul li a:visited {
+	display: block;
+}
+
+/* I.e. Wordpress core classes. */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 25px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 14px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    line-height: 17px;
+    margin: 0;
+    padding: 4px 5px;
+    font-style: italic;
+    color: #6b6b6b;
+}
+
+.sticky {
+
+}
+
+.size-auto, 
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+        white-space: nowrap;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* I.f. Popular posts widget. */
+.popular-widget {
+	border-top: 1px solid #ddd;
+	padding-top: 25px;
+}
+
+.popular-title h2 {
+	font-size: 2.25rem;
+	margin-bottom: 0.3em;
+}
+
+ol.popular-list {
+	list-style: none;
+	counter-reset: item;
+	padding: 0;
+}
+
+ol.popular-list p {
+	margin: 0;
+}
+
+ol.popular-list .popular-article {
+	float: left;
+	display: block;
+	margin: 0 27px 20px 0;
+	counter-increment: item;
+}
+
+ol.popular-list .popular-article:before {
+	font-size: 2.5em;
+	content: counter(item)'.';
+	width: 28px;
+	float: left;
+	padding-right: 5px;
+	text-align: center;
+	border-right: 2px solid #ddd;
+}
+
+ol.popular-list .popular-article-title {
+	width: 275px;
+	margin-left: 35px;
+	padding-left: 10px;
+	font-size: 1.09rem;
+	min-height: 61px;
+}
+
+ol.popular-list .popular-article-title a {
+	text-decoration: none;
+}
+
+
+
+/* SECTION II: HEADER AND HEADER CHILD ELEMENT STYLES. */
+/* II.a. Header standards and proportions. */
+.header {
+	/* add in section padding (1.5rem) */
+	margin: 0 -601.5rem 15px -601.5rem;
+	/* match section padding (1.5rem) */
+	padding: 20px 1.5rem 20px 1.5rem;
+	background: #f6f6f6;
+	/* border solid, not RGBa (Safari bug) */
+	/* 9600px or 10240px to avoid Chrome bug */
+	/* or equivalent in ems or rems (9600/16) */
+	border-left: 600rem solid #f6f6f6;
+	border-right: 600rem solid #f6f6f6;
+	border-bottom: 1px solid #ddd;
+}
+
+/* II.b. Site name and blurb styles. */
+.header-title {
+	float: left;
+}
+
+/* II.c. Header menu. */
+.header-meta {
+	float: right;
+	padding: 1.5px 0;
+}
+
+.header-meta a {
+	text-decoration: none;
+}
+
+#header-menu {
+	float: right;
+	margin-top: 12px;
+	margin-right: 12px;
+}
+
+#header-menu ul li {
+	margin: 0 1rem;
+}
+
+/* II.d. Fluid search box styling. */
+input.search-field {
+	outline: none;
+}
+
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 10px;
+	width: 15px;
+	color: transparent;
+	cursor: pointer;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+input[type=search]:hover {
+	background-color: #fff;
+}
+
+input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	background-color: #fff;
+	color: #000;
+	border-color: #01005e;
+	cursor: auto;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+input:-moz-placeholder {
+	color: transparent;
+}
+
+input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+.search-submit {
+	display: none;
+}
+
+
+
+/* SECTION III: FRONT PAGE STYLING. */
+/* III.a. Latest columns. */
+/* III.a.i. Latest column headers (section title and blurb). */
+.recent-head,
+.sidebar-menuitem {
+	margin: 5px 0 15px 0;
+	padding: 10px 0 10px 0;
+	border-radius: 3px;
+	-webkit-transition: all 120ms ease;
+	-moz-transition: all 120ms ease;
+	-o-transition: all 120ms ease;
+	-ms-transition: all 120ms ease;
+	transition: all 120ms ease;
+}
+
+.recent-head {
+	width: 94.65%;
+}
+
+.front-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+.recent-title {
+	color: #fff;
+}
+
+.recent-title h2 {
+	margin: 0; /* Exemption from global style. */
+	font-size: 2.5em;
+	text-align: center;
+	cursor: default;
+}
+
+#front1-title,
+#front3-title {
+	display: inline-block;
+}
+
+#front1-title {
+	padding-left: 12px;
+}
+
+#front3-title {
+	padding-right: 12px;
+	float: right;
+}
+
+.recent-chevron {
+	display: inline-block;
+	color: #fff;
+	float: right;
+	padding: 12px;
+}
+
+#front3-head .recent-chevron {
+	float: left;
+}
+
+.recent-head:hover,
+.sidebar-menuitem:hover {
+	background-color: #52a3d5;
+}
+
+.recent-nav {
+	display: none;
+	padding: 0 20px 0 20px;
+	margin: 10px 0 10px 0;
+	text-align: center;
+}
+
+.recent-nav li {
+	list-style: none;
+	display: inline-block;
+	padding: 10px 7px;
+	border-radius: 3px;
+}
+
+.recent-nav li:hover {
+	background-color: #3671B8;
+}
+
+.recent-nav li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.recent-head:hover > .recent-nav,
+.recent-head:focus > .recent-nav,
+.sidebar-menuitem:hover > .recent-nav,
+.sidebar-menuitem:focus > .recent-nav {
+	display: block;
+}
+
+/* III.a.ii. Latest columns content area. */
+#front-latest {
+	padding-bottom: 25px; /* ED1: Padding from 20 to 25. */
+	margin-bottom: 25px; /* ED1: Created new 25px margin. */
+	border-bottom: 1px solid #ddd;
+	margin-top: 15px;
+	position: relative;
+}
+
+.recent-section {
+	float: left;
+	width: 32.16%;
+	min-width: 270px;
+}
+
+#recent-front1,
+#recent-front2 {
+	margin-right: 1.76%;
+}
+
+.recent-content {
+	width: 100%;
+	padding-right: 0;
+	border-right: 0;
+	margin-top: 20px;
+	border-right: 1px solid #bdbdbd;
+}
+
+.recent-content:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#front3-content {
+	border-right: none;
+}
+
+.recent-article {
+	margin: 0 0 13px 0;
+	padding: 0 0 0 0;
+	float: left;
+	width: 94.65%;
+}
+
+.bottom-buffer {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #bdbdbd;
+	margin-bottom: 20px;
+}
+
+.editor-pick .recent-blurb h4 a,
+.editor-pick .recent-blurb p {
+	color: #fff;
+}
+
+.editor-pick .recent-blurb p a {
+	color: #dbdbdb;
+}
+
+.editor-pick .recent-blurb {
+	border-bottom: 0;
+	background-color: #006ec3;
+}
+
+.editor-pick .recent-meta a:link,
+.editor-pick .recent-meta a:visited,
+.editor-pick .recent-meta span,
+.editor-pick .recent-meta p {
+	color: #fff;
+}
+
+.editor-pick .recent-meta a:link,
+.editor-pick .recent-meta a:visited {
+	text-decoration: underline;
+}
+
+.editor-pick .recent-meta {
+	background-color: #006ec3;
+}
+
+.recent-article.small {
+	width: 44.735%;
+	margin: 0 5.2% 5.2% 0;
+}
+
+.recent-blurb {
+	padding: 3px 5px 5px 5px;
+	border-bottom: 2px solid #bdbdbd;
+	background-color: #F6F6F6;
+}
+
+.recent-blurb a:link,
+.recent-blurb a:visited {
+	text-decoration: none;
+}
+
+.recent-article:hover > .recent-blurb a:link,
+.recent-article:hover > .recent-blurb a:visited {
+	color: #52a3d5;
+}
+
+.editor-pick:hover > .recent-blurb a:link,
+.editor-pick:hover > .recent-blurb a:visited {
+	color: #fff;
+}
+
+.recent-blurb h4 { /* The title in each masonry brick. */
+	font-size: 1.4em;
+	margin: 2px 0 5px 0;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+.recent-article:first-of-type .recent-blurb h4 {
+	font-size: 2em;
+}
+
+.recent-blurb p { /* The excerpt in each masonry brick. */
+	font-size: 0.94em;
+	font-weight: 400;
+	display: inline;
+	color: #515151;
+}
+
+.recent-article:first-of-type .recent-blurb p {
+	font-size: 1em;
+}
+
+.recent-meta {
+	background-color: #E9E9E9;
+	text-align: right;
+	padding: 5px 5px 5px 0;
+	font-size: 0.95rem;
+	font-weight: 400;
+}
+
+.recent-meta a:link,
+.recent-meta a:visited {
+	text-decoration: none;
+	color: #52a3d5;
+}
+
+.recent-author {
+	display: inline;
+}
+
+.recent-author a {
+	font-style: normal;
+}
+
+/* III.b. Full-width sections. */
+.front-full {
+	margin: 30px 0; /* ED1: Margins from 25 to 30. */
+	padding: 0 0 30px 0;
+	border-bottom: 1px solid #ddd;
+	max-width: 100%;
+}
+
+.front-full-content {
+	max-width: 100%;
+	padding-left: 0;
+	text-align: center;
+}
+
+.front-full-info {
+	margin-bottom: 35px;
+}
+
+.front-full-info .front-full-title {
+	float: left;
+	display: inline-block;
+}
+
+.front-full-info .front-full-title h2 {
+	font-size: 2.5em;
+	margin-bottom: 0;
+}
+
+.front-full-info .front-full-blurb {
+	float: right;
+	display: inline-block;
+}
+
+.front-full-info .front-full-blurb h4 {
+	padding-top: 12px;
+	font-size: 1.1em;
+}
+
+.front-full-info a {
+	text-decoration: none;
+	-webkit-transition: all 120ms ease;
+	-moz-transition: all 120ms ease;
+	-o-transition: all 120ms ease;
+	-ms-transition: all 120ms ease;
+	transition: all 120ms ease;
+}
+
+.front-full-info a:hover {
+	color: #01005e;
+}
+
+.front-full-article {
+	width: 199px;
+	display: inline-block;
+	padding: 0 12px;
+	border-right: 2px solid #ddd;
+	text-align: center;
+	vertical-align: top;
+	margin-bottom: 20px;
+}
+
+#front-popular {
+	padding-bottom: 10px;
+}
+
+.front-full-article:first-of-type {
+	padding-left: 0;
+}
+
+.front-full-article:last-of-type {
+	border-color: #fff;
+	padding-right: 0;
+}
+
+.front-full-article-title {
+	font-size: 1.2rem;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+
+h4.front-full-article-title a {
+	color: #f0825a;
+}
+
+h4#front-popular-article-title a {
+	color: #52a3d5;
+}
+
+h4#front-popular-article-author a {
+	background-color: #01005e;
+}
+
+h4.front-full-article-author {
+	font-size: 1.05rem;
+}
+
+h4.front-full-article-author a {
+	font-style: italic;
+	padding: 0.075rem 0.4rem;
+	border-radius: 5px;
+	color: white;
+}
+
+.front-full-article-title a,
+.front-full-article-author a {
+	text-decoration: none;
+}
+
+/* III.c. Editor's picks full-width section-specific styles. */
+#editors-picks-container {
+	margin-top: 20px;
+	padding-bottom: 9px;
+}
+
+#editors-pick {
+	display: inline-block;
+	text-align: left;
+	width: 18.5%;
+	min-width: 190px;
+	height: 92.6%;
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	padding: 0;
+	margin-right: 7px;
+	margin-bottom: 10px;
+}
+
+#editors-pick:last-of-type {
+	margin-right: 0;
+}
+
+#editors-pick .columnist-thumb {
+	background-color: black;
+}
+
+#editors-pick .columnist-thumb {
+	position: absolute;
+	z-index: 20;
+}
+
+#editors-pick img {
+	opacity: 0.55;
+}
+
+#editors-pick .columnist-info {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 41px;
+	padding: 0 15px 5px 6px;
+	z-index: 25;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+.columnist-author {
+	width: 199px;
+	text-align: center;
+	margin-top: 70%;
+}
+
+#editors-pick h4.front-full-article-author {
+	margin-bottom: 0;
+	width: 100%;
+	background-color: #006ec3;
+	padding: 10px 0;
+	color: #fff;
+}
+
+#editors-pick h4.front-full-article-author a {
+	padding: 0;
+	background-color: transparent;
+	border-radius: 0;
+	text-decoration: underline;
+}
+
+#editors-pick .columnist-thumb img { /* Transition properties. */
+	-webkit-transition: all 0.275s ease; /* Safari and Chrome */
+  	-moz-transition: all 0.275s ease; /* Firefox */
+	-o-transition: all 0.275s ease; /* IE 9 */
+	-ms-transition: all 0.275s ease; /* Opera */
+	transition: all 0.275s ease;
+}
+
+#editors-pick:hover > .columnist-thumb img {
+	opacity: 0.25;
+}
+
+#editors-pick .columnist-title {
+	margin-bottom: 0;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+
+#editors-pick .columnist-title a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.3em;
+}
+
+/* III.d. Two-thirds-width columnist area. */
+.front-columnists {
+	margin-bottom: 35px;
+	width: 65%;
+	float: left;
+}
+
+.columnist-content {
+	text-align: center;
+}
+
+.columnist-article {
+	margin-right: 4px;
+	margin-bottom: 4px;
+	display: inline-block;
+	text-align: left;
+	width: 178px;
+	height: 132px;
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.columnist-article:last-of-type {
+	margin-right: 0;
+}
+
+.columnist-article .columnist-thumb {
+	background-color: black;
+}
+
+.columnist-article .columnist-thumb {
+	position: absolute;
+	z-index: 20;
+}
+
+.columnist-article img {
+	opacity: 0.45;
+}
+
+.columnist-article .columnist-info {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0 5px 5px 6px;
+	z-index: 25;
+	text-align: left;
+	box-sizing: border-box;
+}
+
+.columnist-article .columnist-thumb img { /* Transition properties. */
+	-webkit-transition: all 0.275s ease; /* Safari and Chrome */
+  	-moz-transition: all 0.275s ease; /* Firefox */
+	-o-transition: all 0.275s ease; /* IE 9 */
+	-ms-transition: all 0.275s ease; /* Opera */
+	transition: all 0.275s ease;
+}
+
+.columnist-article:hover > .columnist-thumb img {
+	opacity: 0.25;
+}
+
+.columnist-article .columnist-title {
+	margin-bottom: 0;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+
+.columnist-article .columnist-title a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.3em;
+}
+
+/* III.e. Front page sidebar. */
+.front-side {
+	width: 30.5%;
+	float: right;
+	min-width: 220px;
+	padding-left: 26px;
+	border-left: 1px solid #ddd;
+	margin-bottom: 30px;
+}
+
+.front-side ul .widget {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.front-side ul .widget:first-of-type {
+	margin-top: 0;
+}
+
+/* III.f. Post meta styles. */
+.subtle-date,
+.subtle-author,
+.subtle-category {
+	border: 2px solid #d3d3d3;
+	border-radius: 5px;
+	color: #FFF;
+	background-color: #d3d3d3;
+	margin: 0 2px 2px 0;
+	padding: 3px 7px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .33);
+	display: inline-block;
+}
+
+/* III.g. Editorial section styles. */
+.editorial {
+	position: absolute;
+	bottom: 25px;
+	right: 0px;
+	margin-right: 1.67%;
+	padding-left: 1.8%;
+	border-left: 1px solid #bdbdbd;
+	width: 30.35%;
+}
+
+#editorial-head,
+#editorial-article {
+	width: 100%;
+}
+
+#editorial-head {
+	margin-top: 0;
+	background-color: #006ec3;
+}
+
+#editorial-title h2 {
+	cursor: auto;
+	color: #fff;
+}
+
+#editorial-title a {
+	text-decoration: none;
+}
+
+.editorial-description {
+	text-align: center;
+}
+
+.editorial-description p {
+	margin-top: 3px;
+	text-align: right;
+}
+
+.editorial-description i {
+	float: left;
+}
+
+#editorial-article {
+	margin-bottom: 0;
+}
+
+#editorial-blurb {
+	border-bottom: 2px solid #006ec3;;
+}
+
+
+
+/* SECTION IV: OTHER PAGE STYLING. */
+/* IV.a. Global page styles. */
+article.page h2 {
+	font-size: 225%;
+	margin-bottom: 15px;
+}
+
+/* IV.b. Archive page styles. */
+.archive-title {
+	margin-bottom: 25px;
+	padding-bottom: 2px;
+	border-bottom: 2px solid #ddd;
+	display: inline-block;
+}
+
+.archive-title h2 {
+	font-size: 2.5em;
+	margin-bottom: 0;
+}
+
+#archive-content {
+	border-right: 0;
+	margin-top: 5px;
+	margin-bottom: 1.1rem;
+}
+
+#archive-article:first-of-type {
+	width: 63%;
+}
+
+#archive-article {
+	width: 29.88%;
+	margin: 0 2.89% 2.89% 0;
+}
+
+#archive-article:first-of-type #archive-blurb h4 {
+	font-size: 2em;
+}
+
+#archive-article #archive-blurb h4 {
+	font-size: 1.65em;
+}
+
+.archive-pagination {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 2.25rem;
+	border-top: 2px solid #ddd;
+	padding-top: 7px;
+}
+
+.archive-pagination a {
+	text-decoration: none;
+}
+
+.archive-pagination .page-numbers {
+	font-size: 1.25rem;
+	margin-right: 5px;
+}
+
+.archive-pagination a:hover {
+	color: #01005e;
+}
+
+.archive-pagination .next {
+	border-left: 2px solid #ddd;
+	padding-left: 10px;
+}
+
+.archive-pagination .prev {
+	border-right: 2px solid #ddd;
+	padding-right: 10px;
+}
+
+
+
+/* SECTION V: SINGLE POST STYLES. */
+/* V.a. Post type: Single normal. */
+.article {
+	margin-bottom: 4rem;
+	width: 100%;
+}
+
+.article h2 {
+	font-size: 2.45rem;
+	margin-bottom: 1.25rem;
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+	font-weight: 700;
+}
+
+p.article-meta {
+	font-size: 0.9rem;
+	color: #999;
+	margin-top: 0.6rem;
+}
+
+p.article-meta a {
+	background-color: #01005e;
+	border-radius: 7px;
+	padding: 0.4rem 0.2rem;
+}
+
+p.article-meta a:first-of-type {
+	background-color: #bf0712;
+}
+
+p.article-meta a:link,
+p.article-meta a:visited {
+	text-decoration: none;
+}
+
+p.article-meta a:link,
+p.article-meta a:visited {
+	color: #fff;
+}
+
+.article-thumbnail {
+	margin-bottom: 1.25rem;
+}
+
+.article-content {
+	margin-top: 2.75rem;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+	font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+
+.article-content h1 {
+    display: block;
+    font-size: 2.25rem;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h2 {
+    display: block;
+    font-size: 1.75rem;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h3 {
+    display: block;
+    font-size: 1.42rem;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h4 {
+    display: block;
+    font-size: 1.25rem;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h5 {
+    display: block;
+    font-size: 1.08rem;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content h6 {
+    display: block;
+    font-size: .92rem;
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+.article-content p {
+	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+}
+
+.article-content blockquote p {
+	font-style: italic;
+}
+
+h2.story-body__crosshead {
+	padding-left: 0.15em;
+	margin: 0.65em 0 0.75em 0;
+	font-size: 2.2rem;
+}
+
+/* V.b. Post type: Gallery. */
+article.post-gallery {
+	background-color: #222;
+	color: #FFF;
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+article.post-gallery img {
+	border: none!important;
+}
+
+article.post-gallery h2 {
+	text-align: center;
+}
+
+article.post-gallery a {
+	color: #FFF;
+}
+
+
+
+/* SECTION VI: COMMENTS STYLING. */
+/* VI.a. Comment list styles. */
+.comments h2.comments-title,
+.comments h3.comment-reply-title {
+	border-top: 1px solid #ddd;
+	padding-top: 25px;
+	font-size: 2em;
+}
+
+.comments .comment-list a {
+	text-decoration: none;
+}
+
+.comments .comment-list .comment .comment-author .fn a:link,
+.comments .comment-list .comment .comment-author .fn a:visited {
+	color: #01005e;
+}
+
+.comment-list {
+	margin-bottom: 35px;
+	list-style: none;
+	padding-left: 0;
+}
+
+.comment-author,
+.comment-meta {
+	display: inline-block;
+}
+
+.comment-meta {
+	float: right;
+}
+
+.comment-body {
+	font-size: 16px;
+	border: 1px solid #c6c6c6;
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.04);
+	margin-bottom: 20px;
+	padding: 15px;
+	background-color: #f8f8f8;
+}
+
+.parent .comment-body {
+	margin-bottom: 0;
+}
+
+.depth-1.parent {
+	margin-bottom: 20px;
+}
+
+.depth-2 .comment-body {
+	border-top: 0;
+}
+
+.comment-body p:first-of-type {
+	margin-top: 1em;
+}
+
+.children {
+	list-style: none;
+}
+
+.no-comments {
+	margin-bottom: 1.5em;
+	font-size: 16px;
+}
+
+/* VI.b. Reply form styles. */
+.comment-respond {
+	margin-bottom: 30px;
+}
+
+.comment-respond h3#reply-title {
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+
+.comment-form .logged-in-as {
+	font-size: 1.15rem;
+}
+
+.comment-form .logged-in-as a {
+	text-decoration: none;
+}
+
+.comment-form .logged-in-as a:last-of-type {
+	margin-left: 7.5px;
+	border-left: 2px solid #ddd;
+	padding-left: 12.5px;
+	color: #01005e;
+}
+
+.comment-form .comment-form-comment label {
+	display: none;
+}
+
+.comment-form .comment-form-comment textarea {
+	height: 110px;
+	width: 690px;
+}
+
+p.must-log-in {
+	font-size: 1.075rem;
+}
+
+
+
+/* SECTION VII: SIDEBAR STYLING. */
+/* VII.a. Global styles. */
+.widget:first-of-type {
+	margin-top: 15px;
+}
+
+.widget {
+	padding: 0 0 17px 0;
+	margin: 0 0 17px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.widget:last-of-type {
+	border-bottom: none;
+}
+
+.widget-title {
+	font-size: 2.5em;
+	margin-bottom: 20px;
+}
+
+.widget ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.textwidget,
+.textwidget a,
+.textwidget p {
+	font-size: 0.825rem;
+}
+
+/* VII.b. sidebar-frontpage styles. */
+.front-side ul {
+	padding: 0;
+	margin: 0;
+}
+
+/* VII.c. sidebar-singlepage styles. */
+.sidebar-menu {
+	margin-left: 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.sidebar-menuitem {
+	width: 100%;
+}
+
+.sidebar-menuitem:last-of-type {
+	margin-bottom: 25px;
+}
+
+.sidebar-menuitem .recent-nav {
+	font-size: 14px;
+}
+
+.sidebar-menu .current-cat {
+	background-color: #9cc8d9;
+}
+
+/* VII.d. 'Bubble Trouble' widget. */
+.textwidget .contact-form textarea {
+	width: 331px !important;
+	font-family: inherit;
+}
+
+.textwidget .contact-submit input[type="submit"] {
+	width: 100%;
+	background-color: #01005e;
+	border: none;
+	border-radius: 2px;
+	color: #fff;
+	padding: 3px 0;
+}
+
+
+
+/* SECTION VIII: SITE FOOTER. */
+/* VIII.a. Intermediary footer category listing section. */
+.sitemap {
+	/* add in section padding (1.5rem) */
+	margin: 0 -601.5rem;
+	/* match section padding (1.5rem) */
+	padding: .3rem 1.5rem;
+	background: #565960;
+	/* border solid, not RGBa (Safari bug) */
+	/* 9600px or 10240px to avoid Chrome bug */
+	/* or equivalent in ems or rems (9600/16) */
+	border-left: 600rem solid #565960;
+	border-right: 600rem solid #565960;
+	color: white;
+}
+
+.footer-meta {
+	/* add in section padding (1.5rem) */
+	margin: 0 -601.5rem;
+	/* match section padding (1.5rem) */
+	padding: .25rem 1.5rem;
+	background: #2d3039;
+	/* border solid, not RGBa (Safari bug) */
+	/* 9600px or 10240px to avoid Chrome bug */
+	/* or equivalent in ems or rems (9600/16) */
+	border-left: 600rem solid #2d3039;
+	border-right: 600rem solid #2d3039;
+	color: white;
+}
+
+.sitemap ul {
+	list-style: none;
+}
+
+#menu-sitemap {
+	margin: 0;
+	padding: 0;
+}
+
+#menu-sitemap .menu-item-has-children {
+	margin: 10px 0 10px 0;
+}
+
+#menu-sitemap .sub-menu {
+	padding-left: 0;
+}
+
+#menu-sitemap .sub-menu,
+.sub-menu li,
+#menu-sitemap li a {
+	float: left;
+}
+
+#menu-sitemap li a {
+	margin: 0 25px 0 0;
+	font-size: 1.5rem;
+}
+
+#menu-sitemap .sub-menu li a {
+	margin: 8px 18px 0 0;
+	font-size: 0.85rem;
+}
+
+#menu-sitemap a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#menu-sitemap .sub-menu .current-menu-item a,
+#menu-sitemap .sub-menu .current-post-parent a {
+	border-bottom: 2px solid #52a3d5;
+}
+
+#menu-sitemap .current-menu-item.menu-item-has-children a {
+	border-bottom: none;
+}
+
+/* VIII.b. Site footer menu. */
+.footer-meta {
+	font-size: 84%;
+}
+
+.footer-meta nav {
+	margin: 20px 0 10px 0;
+}
+
+.footer-meta nav a {
+	text-decoration: none;
+}
+
+.footer-meta nav ul li {
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #DDD;
+}
+
+.footer-meta nav ul li:last-of-type {
+	border-right: none;
+}
+
+
+
+/* SECTION IX: 404 pages. */
+/* IX.a. No search results found. */
+.message-404 {
+	text-align: center;
+}
+
+.message-404-title {
+	font-size: 2.5em;
+}
+
+.message-404 i {
+	margin-bottom: 0.5em;
+	color: #bf0712;
+}
+
+.message-404 h2 {
+	margin-bottom: 2em;
+}
+
+
+/* SECTION X: Responsive design for varied browser widths. */
+/* X.a. At 1170px browser width. */
+@media screen and (max-width: 1179px) {
+
+	#editors-pick {
+		border-right: none;
+	}
+
+}
+
+@media screen and (max-width: 1178px) {
+
+	.front-columnists #columnist-article {
+		margin-bottom: 20px;
+	}
+
+}
+
+@media screen and (max-width: 1135px) {
+
+	.columnist-author {
+		margin-top: 74%;
+	}
+
+}
+
+@media screen and (max-width: 1050px) {
+
+	.header-meta,
+	.header-title {
+		float: none;
+		text-align: center;
+	}
+	
+	.header-meta img,
+	.header-title img {
+		display: inline-block;
+	}
+
+}
+
+/* X.b. At 916px browser width. */
+@media screen and (max-width: 916px) {
+
+	.front-columnists #columnist-article {
+		min-width: 170px;
+	}
+
+}
+
+/* X.c. At 879px browser width. */
+@media screen and (max-width: 879px) {
+
+	#recent-front1,
+	#recent-front2 {
+		width: 45%;
+		min-width: 245px;
+	}
+	
+	#recent-front1 {
+		margin-right: 2.64%;
+		margin-left: 5%;
+	}
+		
+	#front2-content {
+		border-right: none;
+		margin-right: none;
+	}
+	
+	#recent-front3 {
+		width: 90%;
+		padding-top: 20px;
+		border-top: 1px solid #bdbdbd;
+		margin-top: 20px;
+		margin-left: 5%;
+	}
+	
+	#front3-head {
+		width: 100%;
+	}
+
+	#front3-article {
+		max-width: 347px;
+		width: 55.25%;
+		margin: 0 2.5% 2.5% 0;
+	}
+	
+	#front3-article.small {
+		max-width: 164px;
+		width: 26.35%;
+	}
+	
+	#front3-article.bottom-buffer {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+	
+	.editorial {
+		position: initial;
+		padding-left: 0;
+		border-left: 0;
+		margin-right: 0;
+		margin-left: 5%;
+		width: 90%;
+		padding-top: 25px;
+		margin-top: 8px;
+		border-top: 1px solid #bdbdbd;
+	}
+	
+}
+
+/* X.d. At 740px browser width. */
+@media screen and (max-width: 740px) {
+
+	.front-columnists {
+		width: 100%;
+		padding-right: 0;
+		border-right: none;
+		padding-bottom: 25px;
+		border-bottom: 1px solid #bdbdbd;
+		margin-bottom: 20px;
+	}
+	
+	.front-side {
+		float: clear;
+		width: 100%;
+	}
+
+}
+
+/* X.e. At 620px browser width. */
+@media screen and (max-width: 620px) {
+
+	.left,
+	#archive-left {
+		width: 100%;
+	}
+	
+	.left {
+		min-width: 280px;
+	}
+	
+	.right {
+		float: clear;
+		width: 100%;
+		border-top: 1px solid #bdbdbd;
+		padding-top: 10px;
+	}
+	
+	#archive-article:first-of-type {
+		min-width: 273px;
+	}
+	
+	#archive-article {
+		min-width: 130px;
+	}
+
+}
+
+/* X.f. At 580px browser width. */
+@media screen and (max-width: 580px) {
+
+	#recent-front1,
+	#recent-front2 {
+		width: 100%;
+	}
+	
+	#recent-front1 {
+		margin-left: 0;
+	}
+	
+	#front1-content {
+		border-right: none;
+		margin-right: none;
+	}
+	
+	#front1-article,
+	#front2-article {
+		width: 55.25%;
+		margin: 0 2.5% 2.5% 0;
+	}
+	
+	#front1-article.small,
+	#front2-article.small {
+		width: 26.35%;
+	}
+	
+	#front1-article.bottom-buffer,
+	#front2-article.bottom-buffer {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+	
+	#recent-front2 {
+		padding-top: 20px;
+		border-top: 1px solid #bdbdbd;
+		margin-top: 10px;
+	}
+	
+	#recent-front3 {
+		margin-top: 10px;
+		margin-left: 0;
+	}	
+	
+	.recent-article {
+		min-width: 273px;
+	}
+	
+	.recent-article.small {
+		min-width: 130px;
+	}
+
+}
+
+/* Navigation styling */
+.header nav {
+    padding: 10px;
+}
+
+header a {
+    color: #01005e;
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    position: relative;
+    padding: 0;
+}
+
+.header li {
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem; /* Added font-size */
+}
+
+/* Dropdown menu styles */
+.header .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: white;
+    list-style: none;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 100;
+}
+
+/* Style dropdown items */
+.header .dropdown li {
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.header .dropdown li a {
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+}
+
+#headerid {
+    color: #01005e;
+}
+
+.header .dropdown li a:hover {
+    color: #0073aa;
+}
+
+/* Show dropdown when hovering over the title */
+.header li:hover .dropdown {
+    display: block;
+}
+
+/* Style dropdown title with arrow */
+.header .dropdown-title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .header li {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .header .dropdown li a {
+        font-size: 0.9rem;
+    }
+
+    #headerid {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header li {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .header .dropdown li a {
+        font-size: 0.8rem;
+    }
+
+    #headerid {
+        font-size: 1.1rem;
+    }
+}
