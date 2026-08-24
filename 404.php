@@ -24,8 +24,6 @@ get_header(); ?>
 			
 	</div><!-- /left -->
 
-	<?php get_sidebar('singlepage'); ?>
-	
 </div><!-- /content -->
 
 <?php get_footer(); ?>

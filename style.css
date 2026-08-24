@@ -1036,6 +1036,12 @@ article.page h2 {
 	margin: 0 2.89% 2.89% 0;
 }
 
+#archive-thumb img {
+	width: 100%;
+	display: block;
+	object-fit: cover;
+}
+
 #archive-article:first-of-type #archive-blurb h4 {
 	font-size: 2em;
 }
@@ -1507,8 +1513,14 @@ p.must-log-in {
 	margin: 20px 0 10px 0;
 }
 
+.footer-meta nav > p {
+	clear: both;
+	margin-top: 20px;
+}
+
 .footer-meta nav a {
 	text-decoration: none;
+	color: #FFFFFF;
 }
 
 .footer-meta nav ul li {
